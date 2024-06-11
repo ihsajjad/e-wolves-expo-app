@@ -7,11 +7,14 @@ module.exports = {
         primary: {
           DEFAULT: "#6C57EC",
         },
-        third: {
+        secondary: {
           DEFAULT: "#F0EEFD",
         },
         "title-color": {
           DEFAULT: "#0B002C",
+        },
+        description: {
+          DEFAULT: "#919191",
         },
       },
     },

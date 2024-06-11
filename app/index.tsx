@@ -4,7 +4,7 @@ import { Image, Text, View } from "react-native";
 
 const index = () => {
   return (
-    <View className="bg-third h-screen w-screen flex-1 gap-y-5 flex-col items-center justify-center">
+    <View className="bg-secondary h-screen w-screen flex-1 gap-y-5 flex-col items-center justify-center">
       <Text className="text-2xl font-medium text-title">
         Access Specialized Care
       </Text>
