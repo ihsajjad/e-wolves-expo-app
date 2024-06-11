@@ -1,7 +1,6 @@
 import InitialLoading from "@/components/InitialLoading";
-import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
@@ -15,21 +14,17 @@ export default function RootLayout() {
   });
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
+    const timeout = setTimeout(() => {
+      if (loaded) {
+        SplashScreen.hideAsync();
+      }
+    }, 2000); // Delay for 2 seconds
+
+    // Cleanup the timeout if the component unmounts
+    return () => clearTimeout(timeout);
   }, [loaded]);
 
-  if (!loaded) {
-    return <InitialLoading />;
-  }
+  if (!loaded) return <InitialLoading />;
 
-  return (
-    <ThemeProvider value={DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
-  );
+  return <Slot />;
 }

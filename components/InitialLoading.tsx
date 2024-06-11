@@ -4,7 +4,7 @@ import { Image, View } from "react-native";
 
 const InitialLoading = () => {
   return (
-    <View className="bg-primary h-screen w-screen flex flex-col items-center justify-center">
+    <View className="bg-primary h-screen w-screen flex-1 flex-col items-center justify-center">
       <Image
         source={require("../assets/images/logo.png")}
         alt="bla"
